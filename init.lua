@@ -1,2 +1,2 @@
-require("tmh_ms")
+require("tm-mse")
 vim.cmd [[ set background=light ]]
