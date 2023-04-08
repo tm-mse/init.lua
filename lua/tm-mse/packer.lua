@@ -1,5 +1,3 @@
-zsh:1: command not found: :q
-
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
