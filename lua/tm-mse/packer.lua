@@ -1,4 +1,4 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
+zsh:1: command not found: :q
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
@@ -13,6 +13,7 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
+    -- Great colorscheme
 	use({
 		"rebelot/kanagawa.nvim",
 		config = function()
@@ -22,12 +23,16 @@ return require('packer').startup(function(use)
 
 	use('nvim-treesitter/nvim-treesitter', {run =':TSUpdate'})
 
+    -- Great fuzzy finder
 	use('theprimeagen/harpoon')
 
+    -- Undo manager
 	use('mbbill/undotree')
 
+    -- Git integration
 	use('tpope/vim-fugitive')
 
+    -- Lsp config
 	use {
 	
 	 	'VonHeikemen/lsp-zero.nvim',
@@ -50,5 +55,13 @@ return require('packer').startup(function(use)
 	
 	
 	}
+    -- Snippet for terraform
+    use('hashivim/vim-terraform')
+
+    -- Autocompletion for python
+    use('deoplete-plugins/deoplete-jedi')
+
+    -- Language package for vim
+    use('sheerun/vim-polyglot')
 
 end)
