@@ -1,6 +1,4 @@
-zsh:1: command not found: :q
-
--- Only required if you have packer configured as `opt`
+-- Only require if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
@@ -63,5 +61,8 @@ return require('packer').startup(function(use)
 
     -- Language package for vim
     use('sheerun/vim-polyglot')
+
+	-- comment plugin 
+	use('scrooloose/nerdcommenter')
 
 end)
