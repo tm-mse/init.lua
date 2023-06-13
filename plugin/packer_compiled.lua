@@ -74,51 +74,40 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  LuaSnip = {
-    loaded = true,
-    path = "/home/tim/.local/share/nvim/site/pack/packer/start/LuaSnip",
-    url = "https://github.com/L3MON4D3/LuaSnip"
+  ale = {
+    commands = { "ALEEnable" },
+    config = { "vim.cmd[[ALEEnable]]" },
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/home/tim/.local/share/nvim/site/pack/packer/opt/ale",
+    url = "https://github.com/dense-analysis/ale"
   },
-  ["cmp-nvim-lsp"] = {
+  dracula = {
     loaded = true,
-    path = "/home/tim/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
-    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+    path = "/home/tim/.local/share/nvim/site/pack/packer/start/dracula",
+    url = "https://github.com/dracula/vim"
   },
-  harpoon = {
+  firenvim = {
     loaded = true,
-    path = "/home/tim/.local/share/nvim/site/pack/packer/start/harpoon",
-    url = "https://github.com/theprimeagen/harpoon"
+    path = "/home/tim/.local/share/nvim/site/pack/packer/start/firenvim",
+    url = "https://github.com/glacambre/firenvim"
+  },
+  ["gitsigns.nvim"] = {
+    config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0" },
+    loaded = true,
+    path = "/home/tim/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   ["kanagawa.nvim"] = {
-    config = { "\27LJ\2\n8\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\25colorscheme kanagawa\bcmd\bvim\0" },
     loaded = true,
     path = "/home/tim/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
     url = "https://github.com/rebelot/kanagawa.nvim"
   },
-  ["lsp-zero.nvim"] = {
+  ["markdown-preview.nvim"] = {
     loaded = true,
-    path = "/home/tim/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
-    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
-  },
-  ["mason-lspconfig.nvim"] = {
-    loaded = true,
-    path = "/home/tim/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
-    url = "https://github.com/williamboman/mason-lspconfig.nvim"
-  },
-  ["mason.nvim"] = {
-    loaded = true,
-    path = "/home/tim/.local/share/nvim/site/pack/packer/start/mason.nvim",
-    url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["nvim-cmp"] = {
-    loaded = true,
-    path = "/home/tim/.local/share/nvim/site/pack/packer/start/nvim-cmp",
-    url = "https://github.com/hrsh7th/nvim-cmp"
-  },
-  ["nvim-lspconfig"] = {
-    loaded = true,
-    path = "/home/tim/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
-    url = "https://github.com/neovim/nvim-lspconfig"
+    path = "/home/tim/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -135,28 +124,121 @@ _G.packer_plugins = {
     path = "/home/tim/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["telescope.nvim"] = {
+  ["vim-closer"] = {
     loaded = true,
-    path = "/home/tim/.local/share/nvim/site/pack/packer/start/telescope.nvim",
-    url = "https://github.com/nvim-telescope/telescope.nvim"
+    path = "/home/tim/.local/share/nvim/site/pack/packer/start/vim-closer",
+    url = "https://github.com/rstacruz/vim-closer"
   },
-  undotree = {
-    loaded = true,
-    path = "/home/tim/.local/share/nvim/site/pack/packer/start/undotree",
-    url = "https://github.com/mbbill/undotree"
+  ["vim-cmp"] = {
+    after = { "vim-vsnip-integ", "vim-vsnip" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/tim/.local/share/nvim/site/pack/packer/opt/vim-cmp",
+    url = "https://github.com/hrsh7th/vim-cmp"
   },
-  ["vim-fugitive"] = {
-    loaded = true,
-    path = "/home/tim/.local/share/nvim/site/pack/packer/start/vim-fugitive",
-    url = "https://github.com/tpope/vim-fugitive"
+  ["vim-dispatch"] = {
+    commands = { "Dispatch", "Make", "Focus", "Start" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/tim/.local/share/nvim/site/pack/packer/opt/vim-dispatch",
+    url = "https://github.com/tpope/vim-dispatch"
+  },
+  ["vim-matchup"] = {
+    after_files = { "/home/tim/.local/share/nvim/site/pack/packer/opt/vim-matchup/after/plugin/matchit.vim" },
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/home/tim/.local/share/nvim/site/pack/packer/opt/vim-matchup",
+    url = "https://github.com/andymass/vim-matchup"
+  },
+  ["vim-vsnip"] = {
+    load_after = {
+      ["vim-cmp"] = true
+    },
+    loaded = false,
+    needs_bufread = true,
+    path = "/home/tim/.local/share/nvim/site/pack/packer/opt/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
+  },
+  ["vim-vsnip-integ"] = {
+    after_files = { "/home/tim/.local/share/nvim/site/pack/packer/opt/vim-vsnip-integ/after/plugin/vsnip_integ.vim" },
+    load_after = {
+      ["vim-cmp"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/tim/.local/share/nvim/site/pack/packer/opt/vim-vsnip-integ",
+    url = "https://github.com/hrsh7th/vim-vsnip-integ"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: kanagawa.nvim
-time([[Config for kanagawa.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\25colorscheme kanagawa\bcmd\bvim\0", "config", "kanagawa.nvim")
-time([[Config for kanagawa.nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'Dispatch', function(cmdargs)
+          require('packer.load')({'vim-dispatch'}, { cmd = 'Dispatch', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-dispatch'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Dispatch ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'Make', function(cmdargs)
+          require('packer.load')({'vim-dispatch'}, { cmd = 'Make', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-dispatch'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Make ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'Focus', function(cmdargs)
+          require('packer.load')({'vim-dispatch'}, { cmd = 'Focus', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-dispatch'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Focus ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'Start', function(cmdargs)
+          require('packer.load')({'vim-dispatch'}, { cmd = 'Start', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-dispatch'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Start ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'ALEEnable', function(cmdargs)
+          require('packer.load')({'ale'}, { cmd = 'ALEEnable', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'ale'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('ALEEnable ', 'cmdline')
+      end})
+time([[Defining lazy-load commands]], false)
+
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Filetype lazy-loads
+time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType racket ++once lua require("packer.load")({'ale'}, { ft = "racket" }, _G.packer_plugins)]]
+vim.cmd [[au FileType cmake ++once lua require("packer.load")({'ale'}, { ft = "cmake" }, _G.packer_plugins)]]
+vim.cmd [[au FileType cpp ++once lua require("packer.load")({'ale'}, { ft = "cpp" }, _G.packer_plugins)]]
+vim.cmd [[au FileType tex ++once lua require("packer.load")({'ale'}, { ft = "tex" }, _G.packer_plugins)]]
+vim.cmd [[au FileType c ++once lua require("packer.load")({'ale'}, { ft = "c" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'ale'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType sh ++once lua require("packer.load")({'ale'}, { ft = "sh" }, _G.packer_plugins)]]
+vim.cmd [[au FileType bash ++once lua require("packer.load")({'ale'}, { ft = "bash" }, _G.packer_plugins)]]
+vim.cmd [[au FileType vim ++once lua require("packer.load")({'ale'}, { ft = "vim" }, _G.packer_plugins)]]
+vim.cmd [[au FileType zsh ++once lua require("packer.load")({'ale'}, { ft = "zsh" }, _G.packer_plugins)]]
+vim.cmd [[au FileType html ++once lua require("packer.load")({'ale'}, { ft = "html" }, _G.packer_plugins)]]
+time([[Defining lazy-load filetype autocommands]], false)
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'vim-matchup'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
