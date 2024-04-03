@@ -31,7 +31,6 @@ return require('packer').startup(function(use)
     branch = 'v2.x',
     requires = {
       -- LSP Support
-      {'neovim/nvim-lspconfig'},             -- Required
       {                                      -- Optional
         'williamboman/mason.nvim',
         run = function()
@@ -39,8 +38,8 @@ return require('packer').startup(function(use)
         end,
       },
       {'williamboman/mason-lspconfig.nvim'}, -- Optional
-  
       -- Autocompletion
+      {'neovim/nvim-lspconfig'},             -- Required
       {'hrsh7th/nvim-cmp'},     -- Required
       {'hrsh7th/cmp-nvim-lsp'}, -- Required
       {'L3MON4D3/LuaSnip'}, -- Required
@@ -49,6 +48,8 @@ return require('packer').startup(function(use)
       {'jose-elias-alvarez/null-ls.nvim'},
     }
   }
+
+  use {'hashivim/vim-terraform'}
 
  -- use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
  -- install without npm or yarn
@@ -60,6 +61,7 @@ return require('packer').startup(function(use)
   -- Post-install/update hook with neovim command
   -- Languages parser for neovim
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use {'fatih/vim-go', run = ':GoUpdateBinaries' }
 
   -- Post-install/update hook with call of vimscript function with argument
   -- use nvim on Mozilla
@@ -71,6 +73,14 @@ return require('packer').startup(function(use)
     config = function() require('gitsigns').setup() end
   }
 
+  -- themes
   use {'dracula/vim', as = 'dracula'}
   use "rebelot/kanagawa.nvim"
+
+  -- icons
+  use {'nvim-tree/nvim-web-devicons'}
+
+  use { 'nvim-telescope/telescope.nvim', tag = '0.1.6'}
+
+  use {'mfussenegger/nvim-ansible'}
 end)
