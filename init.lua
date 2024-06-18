@@ -5,6 +5,9 @@ vim.opt.smartindent = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 
+-- Set lines number 
+vim.opt.number = true
+
 vim.g.mapleader = " "
 
 -- LazyVim
