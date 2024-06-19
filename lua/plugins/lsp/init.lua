@@ -71,6 +71,7 @@ return {
         -- see :help lsp-zero-keybindings
         -- to learn the available actions
         lsp_zero.default_keymaps({buffer = bufnr})
+				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {desc="Renames all references to the symbol under the cursor.", buffer=bufnr})
       end)
 
       require('mason-lspconfig').setup({
@@ -88,14 +89,6 @@ return {
             local lua_opts = lsp_zero.nvim_lua_ls()
             require('lspconfig').lua_ls.setup(lua_opts)
           end,
-	  terraform_ls = function ()
-	    vim.api.nvim_create_autocmd({"BufWritePre"}, {
-  	    pattern = {"*.tf", "*.tfvars"},
-  	    callback = function()
-  	      vim.lsp.buf.format()
-            end,
-          })
-	  end,
         }
       })
     end
