@@ -14,7 +14,9 @@ return {
 														"python",
 														"go",
 														"javascript",
-														"html"
+														"html",
+														"hcl",
+														"terraform",
 													},
         sync_install = false,
         highlight = { enable = true },
