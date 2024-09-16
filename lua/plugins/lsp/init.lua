@@ -75,7 +75,7 @@ return {
       end)
 
       require('mason-lspconfig').setup({
-        ensure_installed = {"lua_ls", "terraformls", "tflint"},
+        ensure_installed = {"lua_ls", "terraformls", "tflint", "bashls"},
         handlers = {
           -- this first function is the "default handler"
           -- it applies to every language server without a "custom handler"
@@ -89,6 +89,21 @@ return {
             local lua_opts = lsp_zero.nvim_lua_ls()
             require('lspconfig').lua_ls.setup(lua_opts)
           end,
+					terraformls = function()
+						require'lspconfig'.terraformls.setup{
+							init_option = {
+								terraform = {
+									path = "/home/tmusete/.asdf/shims/terraform"
+								}
+							}
+						}
+						vim.api.nvim_create_autocmd({"BufWritePre"}, {
+						  pattern = {"*.tf", "*.tfvars", "*.hcl"},
+						  callback = function()
+						    vim.lsp.buf.format()
+						  end,
+						})
+					end
         }
       })
     end

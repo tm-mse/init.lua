@@ -13,27 +13,27 @@ return {
       formatters = {
         tfmt = {
           -- Specify the command and its arguments for formatting
-          command = "tofu",
+          command = "terraform",
           args = { "fmt", "-" },
           stdin = true,
         },
       },
     },
   },
-  {
-    "nathom/filetype.nvim",
-    config = function()
-      -- Setup overrides for file extensions
-      require("filetype").setup({
-        overrides = {
-          extensions = {
-            tf = "terraform",
-            tfvars = "terraform",
-						hcl = "terraform",
-            tfstate = "json",
-          },
-        },
-      })
-    end,
-  },
+  --{
+  --  "nathom/filetype.nvim",
+  --  config = function()
+  --    -- Setup overrides for file extensions
+  --    require("filetype").setup({
+  --      overrides = {
+  --        extensions = {
+  --          tf = "terraform",
+  --          tfvars = "terraform",
+	--					hcl = "terraform",
+  --          tfstate = "json",
+  --        },
+  --      },
+  --    })
+  --  end,
+  --},
 }
