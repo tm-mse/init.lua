@@ -1,0 +1,32 @@
+-- lua/debug.lua
+--local dap = require('dap')
+--local dapui = require('dapui')
+---- Configuration de nvim-dap pour Go avec nvim-dap-go
+--require('dap-go').setup()
+---- Configuration de dap-ui
+--dapui.setup()
+--dap.listeners.after.event_initialized["dapui_config"] = function()
+--	dapui.open()
+--end
+--dap.listeners.after.event_terminated["dapui_config"] = function()
+--	dapui.close()
+--end
+--dap.listeners.after.event_exited["dapui_config"] = function()
+--	dapui.close()
+--end
+---- Configurations par défaut des keymaps pour le debug
+--vim.fn.sign_define('DapBreakpoint', {text='🔴', texthl='', linehl='', numhl=''})
+--vim.fn.sign_define('DapStopped', {text='🟢', texthl='', linehl='', numhl=''})
+---- Mappages de touches pour contrôler le debug (peut être personnalisé selon les préférences)
+--vim.api.nvim_set_keymap('n', '<Leader>dc', ':lua require("dap").continue()<CR>', { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<Leader>dO', ':lua require("dap").step_over()<CR>', { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<Leader>di', ':lua require("dap").step_into()<CR>', { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<Leader>do', ':lua require("dap").step_out()<CR>', { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<Leader>b', ':lua require("dap").toggle_breakpoint()<CR>', { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<Leader>B', ':lua require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>', { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<Leader>lp', ':lua require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<CR>', { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<Leader>dr', ':lua require("dap").repl.open()<CR>', { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<Leader>dl', ':lua require("dap").run_last()<CR>', { noremap = true, silent = true })
+---- Ouvrir/fermer l'UI dap
+--vim.api.nvim_set_keymap('n', '<Leader>du', ':lua require("dapui").toggle()<CR>', { noremap = true, silent = true })
+--

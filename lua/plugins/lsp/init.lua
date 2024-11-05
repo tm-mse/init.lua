@@ -75,7 +75,7 @@ return {
       end)
 
       require('mason-lspconfig').setup({
-        ensure_installed = {"lua_ls", "terraformls", "tflint", "bashls"},
+        ensure_installed = {"lua_ls", "terraformls", "tflint", "bashls", "yamlls", "gopls"},
         handlers = {
           -- this first function is the "default handler"
           -- it applies to every language server without a "custom handler"
@@ -103,9 +103,29 @@ return {
 						    vim.lsp.buf.format()
 						  end,
 						})
-					end
+					end,
+					yamlls = function ()
+						require'lspconfig'.yamlls.setup({
+							settings = {
+         			 	yaml = {
+         			 	  schemas = {
+         			 	    ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+         			 	    ["https://json.schemastore.org/github-action.json"] = "/.github/actions/*",
+         			 	    ["https://json.schemastore.org/kustomization.json"] = "kustomization.yaml",
+         			 	    ["https://json.schemastore.org/chart.json"] = "Chart.yaml",
+         			 	    ["https://json.schemastore.org/dependabot-2.0.json"] = ".github/dependabot.yml",
+         			 	  },
+         			 	  validate = true, -- Activer la validation des fichiers YAML
+         			 	},
+         			},
+						})
+					end,
         }
       })
-    end
-  }
+    end,
+  },
+	{
+		"b0o/schemastore.nvim",
+	}
+
 }
