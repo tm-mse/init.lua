@@ -91,9 +91,10 @@ return {
           end,
 					terraformls = function()
 						require'lspconfig'.terraformls.setup{
-							init_option = {
-								terraform = {
-									path = "/home/tmusete/.asdf/shims/terraform"
+							init_options = {
+								experimentalFeatures = {
+									prefillRequiredFields = true,
+									validateOnSave = true,
 								}
 							}
 						}
