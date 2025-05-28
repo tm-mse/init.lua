@@ -1,4 +1,5 @@
 -- Settings
+require("settings")
 -- Indentation format
 vim.opt.autoindent = true
 vim.opt.smartindent = true
